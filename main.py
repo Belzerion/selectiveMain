@@ -133,5 +133,8 @@ algorithms.eaSimple(population, toolbox, cxpb, mutpb, num_generations, stats=sta
 
 # Get the best individual
 best_individual = tools.selBest(population, k=1)[0]
+with open("best_individuals.txt", "w") as f:
+    for ind in best_individual:
+        f.write(f"Individu : {list(ind)}, Fitness : {ind.fitness.values[0]}\n")
 print('Best individual:', best_individual)
 print('Fitness:', best_individual.fitness.values[0])
